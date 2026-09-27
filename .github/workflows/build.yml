@@ -12,11 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up JDK 8
+      - name: Set up JDK 17 (for sdkmanager)
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "8"
+          java-version: "17"
 
       - name: Install Android SDK
         run: |
@@ -32,6 +32,12 @@ jobs:
             "platforms;android-29" "build-tools;29.0.3"
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
+
+      - name: Set up JDK 8 (for build)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "8"
 
       - name: Build APK
         run: bash build.sh
