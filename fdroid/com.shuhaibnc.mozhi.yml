@@ -15,15 +15,18 @@ Changelog: https://github.com/ShuhaibNC/MozhiApp/releases
 
 AutoUpdateMode: Version v%v
 UpdateCheckMode: Tags
-CurrentVersion: '1.6'
-CurrentVersionCode: 7
+CurrentVersion: '1.7'
+CurrentVersionCode: 8
 
 Builds:
-  - versionName: '1.6'
-    versionCode: 7
-    commit: v1.6
+  # Build from the FULL commit hash of the release tag (F-Droid does not
+  # accept branch/tag names here). Fill this in after tagging the release,
+  # e.g.: commit: 9f3c2a1b4d5e6f7890abcdef1234567890abcdef12
+  - versionName: '1.7'
+    versionCode: 8
+    commit: TODO-full-commit-hash-of-v1.7-tag
     gradle:
-      - release
+      - yes
 
 # No AntiFeatures: fully offline, no network, no tracking, no ads,
 # no proprietary dependencies (platform APIs + OFL Manjari font only).
