@@ -3,6 +3,9 @@
 Offline English–Malayalam dictionary for Android, adapting the logic and data
 from https://github.com/ShuhaibNC/mozhi.
 
+Copyright (c) 2026 Shuhaib N C. Licensed under the GNU General Public License
+v3.0 only — see [LICENSE](LICENSE).
+
 ## Data pipeline
 
 - Source: `data/enml.json` (vendored from the mozhi repo: 59,040 English words,
