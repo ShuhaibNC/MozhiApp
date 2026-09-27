@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme_Mozhi" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+    </style>
+    <style name="Theme_Mozhi_Dark" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+    </style>
+
+    <!-- Alert dialogs follow the app's light/dark theme -->
+    <style name="Dialog_Mozhi" parent="@android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:textColorPrimary">@color/on_bg</item>
+        <item name="android:textColorSecondary">@color/secondary</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+    <style name="Dialog_Mozhi_Dark" parent="@android:style/Theme.Material.Dialog.Alert">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:textColorPrimary">@color/on_bg</item>
+        <item name="android:textColorSecondary">@color/secondary</item>
+        <item name="android:colorAccent">@color/accent</item>
+    </style>
+</resources>

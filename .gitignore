@@ -1,0 +1,13 @@
+# Build outputs
+*.apk
+*.ap_
+*.dex
+# Local keystore material
+*.keystore
+*.jks
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*~
+.idea/
+*.iml

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mozhi</string>
+    <string name="subtitle">English–Malayalam Dictionary</string>
+    <string name="search_hint">Search for a word…</string>
+    <string name="empty_hint">Start typing to see suggestions</string>
+    <string name="no_matches">No matches found</string>
+    <string name="preparing">Preparing dictionary…</string>
+    <string name="theme">Theme</string>
+    <string name="theme_system">System default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="about">About</string>
+    <string name="about_text">Mozhi is an offline English–Malayalam dictionary.\n\nData: github.com/ShuhaibNC/mozhi\nMade by Shuhaib N C</string>
+    <string name="close">Close</string>
+</resources>

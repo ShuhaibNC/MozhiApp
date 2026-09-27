@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AMOLED black palette -->
+    <color name="bg">#000000</color>
+    <color name="surface">#0E0E0E</color>
+    <color name="on_bg">#ECECF1</color>
+    <color name="on_surface">#ECECF1</color>
+    <color name="secondary">#9AA0B4</color>
+    <color name="outline">#232329</color>
+    <color name="suggestion_active">#101418</color>
+    <color name="search_box_bg">#1E1C26</color>
+    <color name="accent">#8AB4F8</color>
+</resources>
