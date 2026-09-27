@@ -11,3 +11,10 @@ Thumbs.db
 *~
 .idea/
 *.iml
+# Generated at build time from data/enml.json (never commit the binary)
+app/src/main/assets/mozhi.db
+# Gradle / local SDK config
+.gradle/
+build/
+app/build/
+local.properties

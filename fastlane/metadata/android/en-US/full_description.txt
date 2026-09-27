@@ -1,0 +1,12 @@
+Mozhi is a fast, offline English to Malayalam dictionary for Android.
+
+Type a word and get instant suggestions as you type, with the matching part highlighted. Tap any suggestion to see its Malayalam meanings, numbered and easy to read.
+
+Everything works fully offline: the complete dictionary of 59,040 English words and over 125,000 Malayalam definitions ships inside the app. No account, no network, no tracking, no ads.
+
+- Instant prefix search with highlighted matches
+- Numbered Malayalam meanings for every word
+- System, light, and dark (AMOLED black) themes with Material You dynamic colors
+- Clean Malayalam-first interface set in the Manjari typeface
+
+Data adapted from the Mozhi open dictionary project.

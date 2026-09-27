@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.shuhaibnc.mozhi"
+        minSdkVersion 21
+        targetSdkVersion 29
+        // Single source of truth for releases. Bump these (and tag v<versionName>)
+        // for every release; F-Droid auto-update reads them with a regex.
+        versionCode 7
+        versionName "1.6"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    // mozhi.db is generated at build time (see generateMozhiDb below) into
+    // build/generated/mozhiAssets and merged as an asset. The prebuilt binary
+    // is intentionally NOT committed to the repo.
+    sourceSets {
+        main {
+            assets.srcDirs += "$buildDir/generated/mozhiAssets"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+// Build the offline dictionary SQLite DB from the vendored data/enml.json.
+// Runs on every build before anything that merges assets.
+task generateMozhiDb(type: Exec) {
+    def outDir = file("$buildDir/generated/mozhiAssets")
+    def outDb = new File(outDir, "mozhi.db")
+    inputs.file "$rootDir/data/enml.json"
+    inputs.file "$rootDir/tools/mkdb.py"
+    outputs.file outDb
+    doFirst {
+        outDir.mkdirs()
+    }
+    commandLine 'python3', "$rootDir/tools/mkdb.py",
+            "$rootDir/data/enml.json", outDb.absolutePath
+}
+
+preBuild.dependsOn generateMozhiDb

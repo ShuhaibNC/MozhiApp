@@ -1,0 +1,19 @@
+// Top-level build file. Version of record for the app lives in app/build.gradle
+// (versionCode / versionName literals — F-Droid reads them with a regex, so
+// they must not be computed dynamically).
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}

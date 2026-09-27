@@ -28,10 +28,17 @@ if [ -n "$JAVA_HOME" ]; then
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
-# --- version ---
-VERSION_CODE=$(grep '^versionCode=' "$SCRIPT_DIR/version.properties" | cut -d= -f2)
-VERSION_NAME=$(grep '^versionName=' "$SCRIPT_DIR/version.properties" | cut -d= -f2)
+# --- version (single source of truth: app/build.gradle literals) ---
+VERSION_CODE=$(grep -oP 'versionCode\s+\K[0-9]+' "$SCRIPT_DIR/app/build.gradle" | head -1)
+VERSION_NAME=$(grep -oP 'versionName\s+"\K[^"]+' "$SCRIPT_DIR/app/build.gradle" | head -1)
 OUT_APK="${OUT_APK:-$SCRIPT_DIR/Mozhi-v$VERSION_NAME.apk}"
+
+# --- dictionary DB: generated at build time from the vendored data/enml.json ---
+# (the prebuilt binary is intentionally not committed; F-Droid builds it too)
+if [ ! -s "$APP/assets/mozhi.db" ]; then
+  echo "== generating mozhi.db from data/enml.json =="
+  python3 "$SCRIPT_DIR/tools/mkdb.py" "$SCRIPT_DIR/data/enml.json" "$APP/assets/mozhi.db"
+fi
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT

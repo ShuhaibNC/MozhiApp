@@ -1,0 +1,1 @@
+Header Theme and About buttons are now modern vector icons.
